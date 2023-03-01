@@ -3,6 +3,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Models.StorageFileNotFoundException;
 import com.example.demo.Models.data.StorageService;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -15,13 +16,15 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 
 
-@Controller
+@RestController
 public class FileUploadController {
 
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(FileUploadController.class);
     private final StorageService storageService;
 
     @Autowired

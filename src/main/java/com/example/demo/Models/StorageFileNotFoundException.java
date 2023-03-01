@@ -1,5 +1,10 @@
 package com.example.demo.Models;
 
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
 public class StorageFileNotFoundException extends StorageException {
 
     public StorageFileNotFoundException(String message) {
