@@ -28,6 +28,10 @@ public class File {
         this.data = data;
     }
 
+    public String getFileName(){
+        return fileName;
+    }
+
     public String getId() {
         return id;
     }

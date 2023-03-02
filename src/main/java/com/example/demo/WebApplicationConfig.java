@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class WebApplicationConfig {
-    @Bean
+    //@Bean
     public StorageService storageService(){
         return new StorageService();
     }
