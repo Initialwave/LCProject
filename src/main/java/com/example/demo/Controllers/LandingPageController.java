@@ -41,13 +41,14 @@ public class LandingPageController {
         return "User/adduser";
     }
     @PostMapping("adduser")
-    public String processAddUserForm(@ModelAttribute @Valid User newUser, Errors errors, Model model){
+    public String processAddUserForm(@ModelAttribute @Valid User user, Errors errors, Model model){
         if(errors.hasErrors()){
             model.addAttribute("title", "Add User");
             return "admin/add";
         }
+        User newUser = new User(user.getUsername(), user.getFirstName(), user.getEmail());
         //user.firstName = userDTO.firstname;
-        //UserRepository.save(newUser);
+       userListRepository.save(newUser);
         return "redirect:";
     }
 

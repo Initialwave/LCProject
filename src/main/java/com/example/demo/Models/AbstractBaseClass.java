@@ -19,16 +19,20 @@ import java.util.Objects;
 @MappedSuperclass
 public abstract class AbstractBaseClass {
 
-    @Id
     @GeneratedValue
+    @Id
     private int id;
 
-    @Column(unique = true)
-    @NotBlank(message="please provide a name.")
-    @Size(min = 3, max = 100, message = "name must contain between 3 and 100 characters")
-    private String name;
+    public AbstractBaseClass(Integer id) {
+        this.id = id;
+    }
 
-    public int getId() { return id; }
+    public AbstractBaseClass() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -39,6 +43,8 @@ public abstract class AbstractBaseClass {
     }
 
     @Override
-    public int hashCode() { return Objects.hash(id); }
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 }
