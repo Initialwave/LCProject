@@ -28,20 +28,25 @@ public class LandingPageController {
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("title", "All User");
-        return "admin/add";
+        model.addAttribute("addButton", "Add User");
+        return "index";
     }
 
     @GetMapping("adduser")
     public String displayAddUserForm(Model model) {
         model.addAttribute("title", "Add User");
-        return "admin/add";
+        User testUser = new User();
+//        testUser.setFirstName("Test");
+        model.addAttribute("user",  new User());
+        return "User/adduser";
     }
-    @PostMapping("add")
+    @PostMapping("adduser")
     public String processAddUserForm(@ModelAttribute @Valid User newUser, Errors errors, Model model){
         if(errors.hasErrors()){
             model.addAttribute("title", "Add User");
             return "admin/add";
         }
+        //user.firstName = userDTO.firstname;
         //UserRepository.save(newUser);
         return "redirect:";
     }

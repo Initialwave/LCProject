@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragment :: head"></head>
 <body class="container  body-content">
 <h1>Add User</h1>
-<nav th:replace="fragments :: page-header"></nav>
+<nav th:replace="fragment :: header"></nav>
 
 <h1>Add User</h1>
 
@@ -12,24 +12,24 @@
         <ul>
             <li>
                 <label th:for="name">User First Name</label>
-                <input class="form-control" th:field="${user.first_name}" />
-                <span th:errors="${user.first_name}" class="error"></span>
+                <input class="form-control" th:field="${user.firstName}" />
+                <span th:errors="${user.firstName}" class="error"></span>
             </li>
-            <li>
-                <label th:for="name">User Last Name</label>
-                <input class="form-control" th:field="${user.last_name}" />
-                <span th:errors="${user.last_name}" class="error"></span>
-            </li>
-            <li>
-                <label th:for="email">User Email</label>
-                <input class="form-control" th:field="${user.email}" />
-                <span th:errors="${user.email}" class="error"></span>
-            </li>
-            <li>
-                <label th:for="phone">User Phone Number</label>
-                <input class="form-control" th:field="${user.phone}" />
-                <span th:errors="${user.phone}" class="error"></span>
-            </li>
+<!--            <li>-->
+<!--                <label th:for="name">User Last Name</label>-->
+<!--                <input class="form-control" th:field="${user.last_name}" />-->
+<!--                <span th:errors="${user.last_name}" class="error"></span>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <label th:for="email">User Email</label>-->
+<!--                <input class="form-control" th:field="${user.email}" />-->
+<!--                <span th:errors="${user.email}" class="error"></span>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <label th:for="phone">User Phone Number</label>-->
+<!--                <input class="form-control" th:field="${user.phone}" />-->
+<!--                <span th:errors="${user.phone}" class="error"></span>-->
+<!--            </li>-->
         </ul>
     </div>
 

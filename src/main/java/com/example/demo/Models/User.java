@@ -67,7 +67,11 @@ public class User extends AbstractBaseClass {
 
     }
 
-   public String getUsername() {
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getUsername() {
         return username;
     }
 
